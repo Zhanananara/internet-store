@@ -5,6 +5,7 @@ const Add = () => {
     <div>
       <h1>add</h1>
       <h2>Regina</h2>
+      <h2>change something</h2>
     </div>
   );
 };
