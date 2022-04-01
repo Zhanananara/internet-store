@@ -21,7 +21,7 @@ const MyRoutes = () => {
           <Route path="/admin" element={<Admin />}>
             <Route index element={<List />} />
             <Route path="add" element={<Add />} />
-            <Route path="edit" element={<Edit />} />
+            <Route path="edit/:id" element={<Edit />} />
             <Route path="form" element={<Form />} />
           </Route>
         </Route>

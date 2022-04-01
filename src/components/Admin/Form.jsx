@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -9,31 +8,34 @@ import Button from "@mui/material/Button";
 
 const initValues = {
   title: "",
-
   price: "",
-
   img: "",
 };
+
 const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
-  const [inpValues, setINpValues] = useState(initValues);
+  const [inpValues, setInpValues] = useState(initValues);
 
   const handleChange = (e) => {
     let obj = {
       ...inpValues,
       [e.target.name]: e.target.value,
     };
-    setINpValues(obj);
+    setInpValues(obj);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveValues(inpValues);
   };
+
   return (
     <div>
-      <h2>form</h2>
+      <h2>Admin form</h2>
       <form
-        onSubmit={(e) => handleSubmit(e)}
-        style={{ display: "flex", flexDirection: "column" }}
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+        style={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
       >
         <TextField
           onChange={(e) => handleChange(e)}
@@ -43,7 +45,6 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
           label="Title"
           variant="outlined"
         />
-
         <TextField
           onChange={(e) => handleChange(e)}
           name="price"
@@ -60,7 +61,6 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
           label="Image"
           variant="outlined"
         />
-
         <Button type="submit" variant="contained">
           Submit
         </Button>

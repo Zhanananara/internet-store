@@ -3,7 +3,7 @@ import React from "react";
 const List = () => {
   return (
     <div>
-      <h1>list</h1>
+      <h1>admin list</h1>
     </div>
   );
 };
