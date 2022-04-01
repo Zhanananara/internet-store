@@ -4,9 +4,9 @@ import ProductContextProvider from "./contexts/ProductContextProvider";
 
 function App() {
   return (
-    <>
+    <ProductContextProvider>
       <MyRoutes />
-    </>
+    </ProductContextProvider>
   );
 }
 

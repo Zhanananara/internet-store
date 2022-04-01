@@ -1,3 +1,10 @@
 {
-  "products": []
+  "products": [
+    {
+      "title": "tyghthg",
+      "price": "500",
+      "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
+      "id": 1
+    }
+  ]
 }
