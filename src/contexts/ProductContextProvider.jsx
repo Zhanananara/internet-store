@@ -1,49 +1,41 @@
+import React, { createContext, useContext, useReducer } from "react";
+import { API } from "../helpers/consts";
 import axios from "axios";
-import React, { createContext, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
 
 export const productContext = createContext();
 
+export const useProductContext = () => {
+  return useContext(productContext);
+};
+
 const INIT_STATE = {
   products: [],
-  productToEdit: null,
+  forEditVal: null,
 };
 
 function reducer(state = INIT_STATE, action) {
   switch (action.type) {
-    case "GET_PRODUCTS":
-      return {
-        ...state,
-        products: action.payload,
-      };
     default:
       return state;
   }
 }
 
-const ProductContextProvider = () => {
-  const navigate = useNavigate();
+const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  async function getProducts() {
+  const addProduct = async (newProduct) => {
     try {
-      let { data } = await axios(API);
-
-      dispatch({
-        type: "GET_PRODUCTS",
-        payload: data,
-      });
+      let res = await axios.post(API, newProduct);
     } catch (err) {
       console.log(err);
     }
-  }
-
-  const deleteProduct = async (id) => {
-    await axios.delete(`${API}/${id}`);
-    getTodos();
   };
 
-  return <div></div>;
+  return (
+    <productContext.Provider value={{ addProduct }}>
+      {children}
+    </productContext.Provider>
+  );
 };
 
 export default ProductContextProvider;
