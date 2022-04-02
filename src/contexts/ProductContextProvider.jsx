@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from "react";
 import { API } from "../helpers/consts";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { notify } from "../Toastify";
 
 export const productContext = createContext();
 
@@ -36,14 +37,6 @@ const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const navigate = useNavigate();
 
-  const addProduct = async (newProduct) => {
-    try {
-      let res = await axios.post(API, newProduct);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   async function getProducts() {
     try {
       let { data } = await axios(API);
@@ -56,6 +49,17 @@ const ProductContextProvider = ({ children }) => {
       console.log(err);
     }
   }
+
+
+  const addProduct = async (newProduct) => {
+    try {
+      let res = await axios.post(API, newProduct);
+      navigate("/admin");
+      notify("info", " Успешно добавлен!");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   async function getId(id) {
     try {
@@ -70,9 +74,11 @@ const ProductContextProvider = ({ children }) => {
     }
   }
 
+
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
+    notify("success", "Успешно удален ");
   };
 
   const saveEditProduct = async (newProduct) => {

@@ -20,3 +20,16 @@ a {
   text-decoration: none;
   color: rgb(227, 64, 208);
 }
+.home-page {
+  background-color: blanchedalmond;
+  color: rgb(35, 229, 161);
+  text-align: center;
+  align-items: center;
+}
+.home-page > span {
+  font-size: 3em;
+  font-weight: bold;
+}
+.books-list {
+  margin: 5px !important;
+}

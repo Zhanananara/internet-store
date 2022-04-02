@@ -17,7 +17,7 @@ const List = () => {
 
   return (
     <>
-      <h1>Admin Products List</h1>
+       <h1>Products List</h1>
       <div className="pr">
         {products.map((item) => (
           <Card sx={{ maxWidth: 345 }} key={item.id}>
