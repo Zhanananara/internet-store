@@ -22,8 +22,12 @@ function reducer(state = INIT_STATE, action) {
         ...state,
         products: action.payload,
       };
-    case "EDIT_PRODUCTS":
-      return { ...state, forEdit: action.payload };
+    case "GET_ID":
+      return {
+        ...state,
+        forEdit: action.payload,
+      };
+
     default:
       return state;
   }
@@ -46,6 +50,7 @@ const ProductContextProvider = ({ children }) => {
     }
   }
 
+
   const addProduct = async (newProduct) => {
     try {
       let res = await axios.post(API, newProduct);
@@ -56,23 +61,30 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  async function getId(id) {
+    try {
+      let { data } = await axios(`${API}/${id}`);
+      let action = {
+        type: "GET_ID",
+        payload: data,
+      };
+      dispatch(action);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
     notify("success", "Успешно удален ");
   };
 
-  const editProduct = async (id) => {
-    let { data } = await axios(`${API}/${id}`);
-    dispatch({
-      type: "EDIT_PRODUCT",
-      payload: data,
-    });
-  };
-
   const saveEditProduct = async (newProduct) => {
     try {
       await axios.patch(`${API}/${newProduct.id}`, newProduct);
+      getProducts();
     } catch (err) {
       navigate("/error");
     }
@@ -86,8 +98,9 @@ const ProductContextProvider = ({ children }) => {
         addProduct,
         getProducts,
         deleteProduct,
-        editProduct,
+
         saveEditProduct,
+        getId,
       }}
     >
       {children}
