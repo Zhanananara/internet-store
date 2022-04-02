@@ -23,11 +23,17 @@ const List = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+      }}
+    >
       <h1>Admin Products List</h1>
 
       {products.map((item) => (
-        <Card sx={{ maxWidth: 345 }} key={item.id}>
+        <Card sx={{ maxWidth: 345, margin: "30px" }} key={item.id}>
           <CardMedia
             component="img"
             height="140"
@@ -50,6 +56,7 @@ const List = () => {
               Delete
             </Button>
           </CardActions>
+          {/* </div> */}
         </Card>
       ))}
     </div>
