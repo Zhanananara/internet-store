@@ -73,6 +73,7 @@ const ProductContextProvider = ({ children }) => {
     }
   }
 
+
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
