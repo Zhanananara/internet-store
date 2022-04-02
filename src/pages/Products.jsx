@@ -1,9 +1,10 @@
 import React from "react";
+import List from "../components/Admin/List";
 
 const Products = () => {
   return (
     <div>
-      <h1>Product</h1>
+      <List />
     </div>
   );
 };

@@ -1,22 +1,16 @@
 {
   "products": [
     {
-      "title": "tyghthg",
+      "title": "test",
       "price": "500",
       "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
       "id": 1
     },
     {
-      "title": "ешеду",
+      "title": "test2",
       "price": "500",
       "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
       "id": 2
-    },
-    {
-      "title": "edjed",
-      "price": "e,j",
-      "img": "qebbqjejd",
-      "id": 3
     }
   ]
 }

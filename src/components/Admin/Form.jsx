@@ -26,11 +26,11 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     saveValues(inpValues);
+    setInpValues({ title: "", price: "", img: "" });
   };
 
   return (
     <div>
-      <h2>Admin form</h2>
       <form
         onSubmit={(e) => {
           handleSubmit(e);
