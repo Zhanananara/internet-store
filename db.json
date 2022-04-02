@@ -1,34 +1,28 @@
 {
   "products": [
     {
-      "title": "Test",
-      "price": "600sd",
-      "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
+      "title": "Ч. Айтматов",
+      "price": "6000",
+      "img": "https://s1.livelib.ru/boocover/1002823194/200x305/8ae6/boocover.jpg",
       "id": 1
     },
     {
-      "title": "test2",
-      "price": "500",
-      "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
+      "title": "Л. Толстой",
+      "price": "5000",
+      "img": "https://s4.knigavuhe.org/2/covers/5301/2-2.jpg?2",
       "id": 2
     },
     {
-      "title": "bmnmn",
-      "price": "700saaaasssss",
-      "img": "bnm,",
+      "title": "А. Пушкин",
+      "price": "6000",
+      "img": "https://img4.labirint.ru/rc/5d124b7438e78ce6f7186b34476edd9d/220x340/books25/245002/cover.jpg?1563599398",
       "id": 3
     },
     {
-      "title": "vnb",
-      "price": "vbn",
-      "img": "nvb",
+      "title": "Ч. Айтматов",
+      "price": "5000",
+      "img": "https://i.otzovik.com/objects/b/1290000/1283652.png",
       "id": 4
-    },
-    {
-      "title": "vnb",
-      "price": "vbn",
-      "img": "nvb",
-      "id": 5
     }
   ]
 }

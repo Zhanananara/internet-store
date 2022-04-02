@@ -50,7 +50,6 @@ const ProductContextProvider = ({ children }) => {
     }
   }
 
-
   const addProduct = async (newProduct) => {
     try {
       let res = await axios.post(API, newProduct);
@@ -85,6 +84,7 @@ const ProductContextProvider = ({ children }) => {
     try {
       await axios.patch(`${API}/${newProduct.id}`, newProduct);
       getProducts();
+      notify("success", "Успешно изменен! ");
     } catch (err) {
       navigate("/error");
     }

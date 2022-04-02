@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div style={{ minHeight: "600px" }}>
       <Navbar />
       <Outlet />
       {/* <Footer /> */}
