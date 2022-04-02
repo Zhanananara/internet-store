@@ -26,8 +26,6 @@ function reducer(state = INIT_STATE, action) {
         ...state,
         forEdit: action.payload,
       };
-    case "EDIT_PRODUCT":
-      return { ...state, forEdit: action.payload };
 
     default:
       return state;
@@ -76,14 +74,6 @@ const ProductContextProvider = ({ children }) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
   };
-
-  // const editProduct = async (id) => {
-  //   let { data } = await axios(`${API}/${id}`);
-  //   dispatch({
-  //     type: "EDIT_PRODUCT",
-  //     payload: data,
-  //   });
-  // };
 
   const saveEditProduct = async (newProduct) => {
     try {
