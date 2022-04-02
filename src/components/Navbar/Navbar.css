@@ -1,6 +1,6 @@
 .active {
   text-decoration: underline !important;
-  color: hotpink !important;
+  color: rgb(24, 23, 23) !important;
 }
 
 .link {
@@ -10,4 +10,10 @@
 
 .box-nav {
   background: linear-gradient(to right, #fdc830, #f37335) !important;
+}
+
+.mobile-link {
+  display: flex;
+  color: black;
+  text-decoration: none;
 }
