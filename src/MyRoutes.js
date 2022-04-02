@@ -9,7 +9,6 @@ import Add from "./components/Admin/Add";
 import Form from "./components/Admin/Form";
 import List from "./components/Admin/List";
 import Edit from "./components/Admin/Edit";
-import EEdit from "./components/Admin/Edit";
 
 const MyRoutes = () => {
   return (

@@ -16,8 +16,16 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { NavLink } from "react-router-dom";
+import { Button } from "@mui/material";
 import "./Navbar.css";
 import PersonIcon from "@mui/icons-material/Person";
+import InfoIcon from "@mui/icons-material/Info";
+import QrCodeIcon from "@mui/icons-material/QrCode";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+// import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -123,16 +131,40 @@ export default function Navbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <PersonIcon />
-        </IconButton>
-        <p>About</p>
+        <NavLink to="/about" className="mobile-link">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <InfoIcon />
+          </IconButton>
+          <p>About</p>
+        </NavLink>
       </MenuItem>
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <PersonIcon />
-        </IconButton>
-        <p>Products</p>
+        <NavLink to="/products" className="mobile-link">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <QrCodeIcon />
+          </IconButton>
+          <p>Products</p>
+        </NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to="/admin" className="mobile-link">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <AdminPanelSettingsIcon />
+          </IconButton>
+          <p>Admin</p>
+        </NavLink>
       </MenuItem>
 
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -164,64 +196,53 @@ export default function Navbar() {
           </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
-          <Box>
-            <NavLink className=" link" to="/about">
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                About
-              </IconButton>
-            </NavLink>
-            <NavLink className=" link" to="/products">
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                Products
-              </IconButton>
-            </NavLink>
 
-            <NavLink className="link" to="/admin">
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                Admin
-              </IconButton>
-            </NavLink>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
+              component={NavLink}
+              to="/about"
+            >
+              ABOUT
+            </Button>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
+              component={NavLink}
+              to="/products"
+            >
+              PRODUCTS
+            </Button>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
+              component={NavLink}
+              to="/admin"
+            >
+              ADMIN
+            </Button>
           </Box>
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Typography variant="h6" component="div" sx={{ my: 2 }}>
+              Admin
+            </Typography>
             <IconButton
               size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
+              edge="center"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
