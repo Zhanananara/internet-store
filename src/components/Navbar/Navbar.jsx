@@ -194,15 +194,7 @@ export default function Navbar() {
           >
             Home
           </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
