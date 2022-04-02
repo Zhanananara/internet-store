@@ -8,7 +8,7 @@ const MainLayout = () => {
     <div style={{ minHeight: "600px" }}>
       <Navbar />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

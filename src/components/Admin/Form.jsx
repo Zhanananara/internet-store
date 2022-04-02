@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 const initValues = {
   title: "",
@@ -26,11 +24,11 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     saveValues(inpValues);
+    setInpValues({ title: "", price: "", img: "" });
   };
 
   return (
     <div>
-      <h2>Admin form</h2>
       <form
         onSubmit={(e) => {
           handleSubmit(e);

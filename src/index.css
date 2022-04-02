@@ -5,8 +5,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(to right, #ffe259, #ffa751);
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.pr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
