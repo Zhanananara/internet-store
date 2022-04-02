@@ -16,3 +16,7 @@ code {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+a {
+  text-decoration: none;
+  color: rgb(227, 64, 208);
+}

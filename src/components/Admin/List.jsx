@@ -9,8 +9,7 @@ import Typography from "@mui/material/Typography";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const List = () => {
-  const { getProducts, products, deleteProduct, editProduct } =
-    useContext(productContext);
+  const { getProducts, products, deleteProduct } = useContext(productContext);
 
   useEffect(() => {
     getProducts();
