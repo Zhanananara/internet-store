@@ -17,7 +17,7 @@ const Add = () => {
       >
         <ArrowBackIosNewIcon fontSize="large" />
       </IconButton>
-      <h2> Admin add </h2>
+      <h2>Add new product </h2>
       <Form saveValues={addProduct} compForEdit={false} />
     </div>
   );
